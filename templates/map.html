@@ -1,0 +1,36 @@
+<html>
+  <head>
+  <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+  <script src="http://js.api.here.com/v3/3.0/mapsjs-core.js" type="text/javascript" charset="utf-8"></script>
+  <script src="http://js.api.here.com/v3/3.0/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
+  <script src="http://js.api.here.com/v3/3.0/mapsjs-mapevents.js" type="text/javascript" charset="utf-8"></script>
+  </head>
+  <body style='margin: 0'>
+  <div style="width: 100vw; height: 100vh" id="mapContainer"></div>
+  <script>
+    // Initialize the platform object:
+    var platform = new H.service.Platform({
+    'app_id': '{{app_ID}}',
+    'app_code': '{{app_CODE}}'
+    });
+
+    // Obtain the default map types from the platform object
+	const longi = {{longitude}};
+	const latit = {{latitude}};
+    
+	// Instantiate (and display) a map object:
+    const map = new H.Map(
+    document.getElementById('mapContainer'),
+    platform.createDefaultLayers().satellite.map,
+    {
+      zoom: 10,
+      center: { lng: longi, lat: latit}
+    });
+	const mapEvents = new H.mapevents.MapEvents(map);
+	const behavior = new H.mapevents.Behavior(mapEvents);
+	
+	const marker1 = new H.map.Marker({lat: latit, lng: longi});
+	map.addObject(marker1);
+  </script>
+  </body>
+</html>
