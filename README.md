@@ -1,5 +1,5 @@
 # here-python-flask
-A python flask application through which you can look for a place/city on map using Here API(Map and Geocoder)
+A python flask application for searching a place/city by name on the map using Here API(Map and Geocoder)
 
 Pre-requsites -
 1. Python installed on your PC (preferablly 3.7)
