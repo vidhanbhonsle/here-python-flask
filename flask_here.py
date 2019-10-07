@@ -1,11 +1,6 @@
 from flask import Flask,render_template
 import requests
 
-"""
-pip install flask
-pip install requests
-"""
-
 URL = "https://geocoder.api.here.com/6.2/geocode.json"
 location = input("Enter the location here: ")
 app_ID = 'YOUR_APP_ID'
